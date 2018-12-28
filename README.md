@@ -24,6 +24,20 @@
 3. Node_modules (not created until gulp is installed by following below)
 
 ### Gulp Usage
+Check for Node and npm
+Make sure that you've installed Node and npm before attempting to install gulp by running the following commands in your terminal.
+
+`node -v`
+
+`npm -v`
+
+If not, following the instructions found on the [Node.js website](https://nodejs.org/en/).
+
+Install the Gulp CLI (Command Line Interface) by running the following in your terminal.
+
+`npm install --global gulp-cli`
+
+
 1. To install you position yourself in the project folder by traversing via terminal using the cd command and install using npm by running the command below:<br />
 `$ npm install`
 
