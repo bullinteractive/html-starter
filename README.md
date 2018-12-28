@@ -24,30 +24,43 @@
 3. Node_modules (not created until gulp is installed by following below)
 
 ### Gulp Usage
-Check for Node and npm
-Make sure that you've installed Node and npm before attempting to install gulp by running the following commands in your terminal.
 
-`node -v`
+1. Check for Node and npm
 
-`npm -v`
+   Make sure that you've installed Node and npm before attempting to install gulp by running the following commands in your terminal.
 
-If not, following the instructions found on the [Node.js website](https://nodejs.org/en/).
+   `$ node -v`
 
-Install the Gulp CLI (Command Line Interface) by running the following in your terminal.
+   `$ npm -v`
 
-`npm install --global gulp-cli`
+   - . If they are not found, follow the instructions found on the [Node.js website](https://nodejs.org/en/).
 
+2. Install the Gulp CLI (Command Line Interface) by running the following in your terminal.
 
-1. To install you position yourself in the project folder by traversing via terminal using the cd command and install using npm by running the command below:<br />
-`$ npm install`
+   `$ npm install --global gulp-cli`
 
-2. To initially process javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
-`$ gulp`
+3. To install the dependencies, traverse position yourself in the project folder by traversing via terminal using the cd command and install using npm by running the command below:<br />
 
-3. To watch javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
-`$ gulp watch`
+   `$ npm install`
 
-4. To add SVG’s to spritemap, drop any svg into the /src/svg folder. The name of the svg will become the id of the svg.<br />
+   **Note: If the code warning below appear, don't fret.
+   
+   ```
+   npm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
+   npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+   npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+   npm WARN deprecated graceful-fs@1.2.3: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
+   ```
+
+4. To initially process javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
+
+   `$ gulp`
+
+5. To watch javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
+
+   `$ gulp watch`
+
+6. To add SVG’s to spritemap, drop any svg into the /src/svg folder. The name of the svg will become the id of the svg.<br />
 > Make any changes such as fill="currentColor" to the svg inside of the /src/svg folder and Gulp will process.
 
 ### Gulp Task File Structure:
