@@ -1,0 +1,23 @@
+// ==============================================================
+// Functions - General setup
+// ==============================================================
+
+// Map deep for using nested keys when calling (@include) mixins 
+// that require traversing past 1 level maps such as the 
+// font mixin
+// @author Hugo Giraudel
+// @access public
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Key chain
+// @return {*} - Desired value
+// Used for: font stacks...TBD
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    @if type-of($map) != "map" {
+      @warn '`#{$map}` is not a map.';
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}

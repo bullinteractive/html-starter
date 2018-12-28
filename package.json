@@ -1,0 +1,17 @@
+{
+  "name": "basic-html-starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-minify": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svg-sprite": "latest"
+  }
+}
