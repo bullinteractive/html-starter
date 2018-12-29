@@ -33,7 +33,7 @@
 
    `$ npm -v`
 
-   **If they are not found, follow the instructions found on the [Node.js website](https://nodejs.org/en/).**
+   *If they are not found, follow the instructions found on the [Node.js website](https://nodejs.org/en/).*
 
 2. Install the Gulp CLI (Command Line Interface) by running the following in your terminal.
 
@@ -43,7 +43,7 @@
 
    `$ npm install`
 
-   **Note: If the code warning below appear, don't fretand continue to the next step.**
+   *Note: If the code warning below appear, don't fretand continue to the next step.*
    
    ```
    npm WARN deprecated graceful-fs@3.0.11: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
