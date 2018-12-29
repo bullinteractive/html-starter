@@ -61,7 +61,8 @@
    `$ gulp watch`
 
 6. To add SVG’s to spritemap, drop any svg into the /src/svg folder. The name of the svg will become the id of the svg.<br />
-> Make any changes such as fill="currentColor" to the svg inside of the /src/svg folder and Gulp will process.
+
+   > Make any changes such as fill="currentColor" to the svg inside of the /src/svg folder and Gulp will process.
 
 ### Gulp Task File Structure:
 
