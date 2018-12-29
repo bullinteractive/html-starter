@@ -12,10 +12,11 @@ $(document).ready(function(){
 
 	// Remove local file and uncomment below once on the dev server
 
-	// $.get("./img/spritemap.svg", function(data) {
-	//   var div = document.createElement("div");
-	//   div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
-	//   document.body.insertBefore(div, document.body.childNodes[0]);
-	// });
+	$.get("./img/spritemap.svg", function(data) {
+	  var spritemapDiv = document.createElement("div");
+	  spritemapDiv.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+	  spritemapDiv.style.display = "none";
+	  document.body.insertBefore(spritemapDiv, document.body.childNodes[0]);
+	});
 
 })
