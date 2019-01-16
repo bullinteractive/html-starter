@@ -1,10 +1,12 @@
 # A basic HTML starter project with Sass and Gulp.js
 
-## Project Languages
+## Core Languages, Frameworks and Libraries
 1. HTML5
-2. Css w/ Sass
+2. CSS w/ Sass
 3. jQuery
-4. Node.js
+4. Node.js and npm
+
+> To-do: Extend this project to not require HTML but have a build script that you can configure to determine what launguage you would like to use for your templating engine.
 
 ## Installing Node.js
 
@@ -36,6 +38,8 @@ This is for instances in which you need to mimic that functions of a project tha
    `$ http-server`
 
 ## Project Utilities (Optional)
+Below are some frameworks and libraries that can help extend the project as they are commonly used accross a lot of projects based on the proposed scope of work.
+
 1. [Bootstrap Framework (Grid Only)](https://getbootstrap.com/docs/4.0/layout/grid/): A free and open-source front-end web framework for building responsive, mobile-first websites and web applications.
 2. [Eric Meyers reset](https://meyerweb.com/eric/tools/css/reset/) and [Normalize.css](https://necolas.github.io/normalize.css/): Makes browsers render all elements more consistently and in line with modern standards.
 3. [Modernizer](https://modernizr.com/): A collection of superfast tests – or “detects” as we like to call them – which run as your web page loads, then you can use the results to tailor the experience to the user.
