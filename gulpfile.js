@@ -20,7 +20,7 @@ gulp.task('svg-sprite', function() {
 gulp.task('styles', function () {
   return gulp.src('./src/css/**/*.scss')
     .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.sass({outputStyle: 'compressed'}).on('error', plugins.sass.logError))
+      .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
       .pipe(plugins.autoprefixer({
           browsers: ['last 2 versions', 'safari 6', 'ie 9', 'ios 7', 'android 4']
         }))

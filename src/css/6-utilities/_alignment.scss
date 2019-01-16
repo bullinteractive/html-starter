@@ -37,12 +37,18 @@
  * Vertically center content
  --------------------------------------------------------------*/
 
-.center-wrapper {
+#{bem-b(center-wrapper)} {
 	display: table;
 	height: 100%;
 	width: 100%;
 }
-.center-content {
+
+#{bem-b-m(center-wrapper, full-screen)} {
+	height: 100vh;
+	width: 100vw;
+}
+
+#{bem-b-e(center-wrapper, content)} {
 	display: table-cell;
 	height: 100%;
 	width: 100%;
