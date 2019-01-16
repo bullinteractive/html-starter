@@ -2,8 +2,38 @@
 
 ## Project Languages
 1. HTML5
-2. Sass
+2. Css w/ Sass
 3. jQuery
+4. Node.js
+
+## Installing Node.js
+
+1. Check for Node and npm
+
+   Make sure that you've installed Node and npm before attempting to install gulp by running the following commands in your terminal.
+
+   `$ node -v`
+
+   `$ npm -v`
+
+   *If they are not found, follow the instructions found on the [Node.js website](https://nodejs.org/en/).*
+
+2. Install the Gulp CLI (Command Line Interface) by running the following in your terminal.
+
+   `$ npm install --global gulp-cli`
+
+## Server Setup (Optional)
+This is for instances in which you need to mimic that functions of a project that isn't based on a file:// like structure.
+
+1. Install the http-server package from npm
+
+   Install the http-server globally on your machine using the node package manager (npm) command line tool, this will allow you to run a web server from anywhere on your computer.
+
+   `$ npm install -g http-server`
+
+2. Travers to your projects directory and run the following command
+   
+   `$ http-server`
 
 ## Project Utilities (Optional)
 1. [Bootstrap Framework (Grid Only)](https://getbootstrap.com/docs/4.0/layout/grid/): A free and open-source front-end web framework for building responsive, mobile-first websites and web applications.
@@ -25,21 +55,7 @@
 
 ### Gulp Usage
 
-1. Check for Node and npm
-
-   Make sure that you've installed Node and npm before attempting to install gulp by running the following commands in your terminal.
-
-   `$ node -v`
-
-   `$ npm -v`
-
-   *If they are not found, follow the instructions found on the [Node.js website](https://nodejs.org/en/).*
-
-2. Install the Gulp CLI (Command Line Interface) by running the following in your terminal.
-
-   `$ npm install --global gulp-cli`
-
-3. To install the dependencies, traverse position yourself in the project folder by traversing via terminal using the cd command and install using npm by running the command below:<br />
+1. To install the dependencies, traverse position yourself in the project folder by traversing via terminal using the cd command and install using npm by running the command below:<br />
 
    `$ npm install`
 
@@ -52,15 +68,15 @@
    npm WARN deprecated graceful-fs@1.2.3: please upgrade to graceful-fs 4 for compatibility with current and future versions of Node.js
    ```
 
-4. To initially process javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
+2. To initially process javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
 
    `$ gulp`
 
-5. To watch javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
+3. To watch javascript, sass and any gulp tasks found in the gulp.js file by running the command below:<br />
 
    `$ gulp watch`
 
-6. To add SVG’s to spritemap, drop any svg into the /src/svg folder. The name of the svg will become the id of the svg.<br />
+4. To add SVG’s to spritemap, drop any svg into the /src/svg folder. The name of the svg will become the id of the svg.<br />
 
    > Make any changes such as fill="currentColor" to the svg inside of the /src/svg folder and Gulp will process.
 
