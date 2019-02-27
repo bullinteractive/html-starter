@@ -13,19 +13,20 @@ gulp.task('svg-sprite', function() {
         }
       }
     }))
-    .pipe(gulp.dest('./img'));
+    .pipe(gulp.dest('./dist/img'));
 });
 
 // CSS
-gulp.task('styles', function () {
+gulp.task('postcss', function(){
+  var processors = [
+
+  ]
   return gulp.src('./src/css/**/*.scss')
     .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
-      .pipe(plugins.autoprefixer({
-          browsers: ['last 2 versions', 'safari 6', 'ie 9', 'ios 7', 'android 4']
-        }))
+    .pipe(plugins.sass())
+    .pipe(plugins.postcss(processors))
     .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./dist/css'));
 });
 
 // JS - custom scripts
@@ -35,7 +36,7 @@ gulp.task('scripts', function() {
       .pipe(plugins.concat('scripts.js'))
       .pipe(plugins.minify())
     .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./dist/js'));
 });
 
 // JS - plugins
@@ -45,25 +46,25 @@ gulp.task('scripts-plugin', function() {
       .pipe(plugins.concat('plugins.js'))
       .pipe(plugins.minify())
     .pipe(plugins.sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest('./dist/js'));
 });
 
 // JS - library files
 // Copy these files from /src/js/lib to /js/lib to maintain full file
 gulp.task('scripts-lib', function() {
   gulp.src('./src/js/lib/**/*')
-    .pipe(gulp.dest('./js/lib'));
+    .pipe(gulp.dest('./dist/js/lib'));
 });
 
 
 // Default Tasks
-gulp.task('default', ['scripts', 'scripts-lib', 'scripts-plugin', 'styles', 'svg-sprite',]);
+gulp.task('default', ['scripts', 'scripts-lib', 'scripts-plugin', 'postcss', 'svg-sprite',]);
 
 // Watch tasks
 gulp.task('watch', function() {
 
   // Watch general .scss files
-  gulp.watch('src/css/**/*.scss', ['styles']);
+  gulp.watch('src/css/**/*.scss', ['postcss']);
 
   // Watch partials .js files
   gulp.watch('src/js/scripts.js', ['scripts']);
