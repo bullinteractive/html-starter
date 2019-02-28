@@ -1,5 +1,8 @@
 var gulp = require('gulp'),
-    plugins = require('gulp-load-plugins')();
+    plugins = require('gulp-load-plugins')({
+      overridePattern: true,
+      pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*', 'postcss-*', 'postcss.*', '@*/postcss{-,.}*']
+    });
 
 // SVG Sprites
 gulp.task('svg-sprite', function() {
@@ -19,9 +22,45 @@ gulp.task('svg-sprite', function() {
 // CSS
 gulp.task('postcss', function(){
   var processors = [
-
+    plugins.postcssPresetEnv({ 
+      stage: 0,
+      browsers: ['last 2 versions', 'safari 6', 'ie 9', 'ios 7', 'android 4']
+    }),
+    plugins.postcssPxtorem({
+      rootValue: 16,
+      unitPrecision: 5,
+      propList: ['font', 'font-size', 'line-height', 'letter-spacing'],
+      selectorBlackList: [],
+      replace: true,
+      mediaQuery: false,
+      minPixelValue: 0
+    })
   ]
   return gulp.src('./src/css/**/*.scss')
+      .pipe(plugins.plumber({ errorHandler: function(err) {
+        var lineNumber = (err.lineNumber) ? 'LINE ' + err.lineNumber + ' -- ' : '';
+        plugins.notify.onError({
+            title: "Gulp error in " + err.plugin,
+            message: lineNumber + 'See console.',
+        })(err);
+        // Inspect the error object
+      console.log(err.message.toString());
+
+      // Easy error reporting
+      //console.log(error.toString());
+
+      // Pretty error reporting
+      // var report = '';
+      // var chalk = plugins.chalk;
+
+      // report += chalk('TASK:') + ' [' + err.plugin + ']\n';
+      // report += chalk('PROB:') + ' ' + err.message + '\n';
+      // if (err.lineNumber) { report += chalk('LINE:') + ' ' + err.lineNumber + '\n'; }
+      // if (err.fileName)   { report += chalk('FILE:') + ' ' + err.fileName + '\n'; }
+      // console.error(report);
+      
+      this.emit('end');
+    }}))
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass())
     .pipe(plugins.postcss(processors))

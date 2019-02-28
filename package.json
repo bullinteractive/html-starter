@@ -5,14 +5,19 @@
   "scripts": {},
   "dependencies": {},
   "devDependencies": {
+    "chalk": "^2.4.2",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-postcss": "^8.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-minify": "2.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-svg-sprite": "^1.2.13"
+    "gulp-svg-sprite": "^1.2.13",
+    "postcss-preset-env": "^6.5.0",
+    "postcss-pxtorem": "^4.0.1"
   }
 }
