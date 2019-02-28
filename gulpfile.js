@@ -10,6 +10,10 @@ gulp.task('svg-sprite', function() {
     .pipe(plugins.svgSprite({
       mode: {
         symbol: {
+          render: {
+            css: false, // CSS output option for icon sizing
+            scss: false // SCSS output option for icon sizing
+          },
           dest: '',
           prefix: '',
           sprite: 'spritemap'
@@ -19,8 +23,42 @@ gulp.task('svg-sprite', function() {
     .pipe(gulp.dest('./dist/img'));
 });
 
+gulp.task('icons', () => {
+  gulp.src('./src/svg/*svg')
+    .pipe(plugins.image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      mozjpeg: true,
+      guetzli: false,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 10,
+      quiet: true // defaults to false
+    }))
+    .pipe(gulp.dest('./dist/img/icons'));
+});
+
+gulp.task('images', () => {
+  gulp.src('./src/img/*')
+    .pipe(plugins.image({
+      pngquant: true,
+      optipng: false,
+      zopflipng: true,
+      jpegRecompress: false,
+      mozjpeg: true,
+      guetzli: false,
+      gifsicle: true,
+      concurrent: 10,
+      quiet: true // defaults to false
+    }))
+    .pipe(gulp.dest('./dist/img/images'));
+});
+
 // CSS
 gulp.task('postcss', function(){
+  console.log(plugins);
   var processors = [
     plugins.postcssPresetEnv({ 
       stage: 0,
@@ -34,6 +72,10 @@ gulp.task('postcss', function(){
       replace: true,
       mediaQuery: false,
       minPixelValue: 0
+    }),
+    plugins.postcssSvg({
+      dirs: ['./src/svg'],
+      svgo: { plugins: [{ cleanupAttrs: true }] } 
     })
   ]
   return gulp.src('./src/css/**/*.scss')
@@ -115,6 +157,9 @@ gulp.task('watch', function() {
   gulp.watch('src/js/lib/*.js', ['scripts-lib']);
 
   // SVG files for spritemap
-  gulp.watch('src/svg/**/*.svg', ['svg-sprite']);
+  gulp.watch('src/svg/**/*.svg', ['svg-sprite', 'icons']);
+
+  // SVG files for spritemap
+  gulp.watch('src/img/*', ['images']);
   
 });

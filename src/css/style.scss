@@ -1,8 +1,8 @@
-// input
-h1 {
-    margin: 0 0 20px;
-    font-size: 32px;
-    line-height: 1.2;
-    letter-spacing: 1px;
-    transform: translate(40px);
+.logo {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    display: block;
+    content: url("../../src/svg/icon-social-google-plus.svg" param(--color pink));
+    background: url("../../dist/img/spritemap#icon-social-google-plus" param(--color pink));
 }
